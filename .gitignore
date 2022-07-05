@@ -8,3 +8,6 @@
 # .tfvars files
 *.tfvars
 *.terraform.lock.hcl
+
+# .vagrant files
+**/.vagrant/*

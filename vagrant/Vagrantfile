@@ -1,0 +1,34 @@
+ENV["LC_ALL"] = "zh_TW.UTF-8"
+Vagrant.require_version ">= 2.2.19"
+Vagrant.configure(2) do |config|
+   config.vm.box = "generic/debian10"
+   config.vm.box_version = "4.0.2"
+   config.vm.define vm_name = 'terraformMan'
+  
+   config.vm.provision "docker" do |d|
+     d.pull_images "amazon/aws-cli:2.7.12"
+     d.pull_images "hashicorp/terraform:1.2.4"
+   end
+
+   config.vm.provision "shell", privileged: false, inline: <<-SHELL
+     sudo apt-get update
+     sudo apt-get install -y unzip
+
+     # step1: instal aws cli
+     curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+     sudo unzip awscliv2.zip
+     sudo ./aws/install
+
+     # step2: install tfenv tool
+     git clone https://github.com/tfutils/tfenv.git ~/.tfenv
+     echo 'export PATH="$HOME/.tfenv/bin:$PATH"' >> ~/.bash_profile
+     sudo ln -s ~/.tfenv/bin/* /usr/local/bin
+
+   SHELL
+  
+   config.vm.network :private_network, ip: "172.168.10.10"
+   config.vm.provider "hyperv" do |h|
+     h.cpus = 4
+     h.memory = 2048
+   end
+end
