@@ -3,3 +3,4 @@ variable "region" {
 }
 variable "credential" {}
 variable "profile" {}
+variable "manager" {}
