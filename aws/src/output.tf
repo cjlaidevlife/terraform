@@ -12,3 +12,10 @@ output "lab_ecs_subnet_02_cidr" {
   value = "${aws_subnet.lab_ecs_subnet_02.cidr_block}"
   description = "lab ecs subnet 02 cidr"
 }
+
+
+
+output "lab_ecr_01_url" {
+  value = "${aws_ecr_repository.lab_ecr_01.repository_url}"
+  description  = "ecr image repository url"
+}
