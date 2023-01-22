@@ -1,21 +1,14 @@
-output "lab_vpc_cidr" {
-  value = "${aws_vpc.main.cidr_block}"
-  description = "lab vpc cidr"
+output "vpc_main_cidr" {
+  value = aws_vpc.main.cidr_block
+  description = "main vpc cidr"
 }
 
-output "lab_ecs_subnet_01_cidr" {
-  value = "${aws_subnet.lab_ecs_subnet_01.cidr_block}"
-  description = "lab ecs subnet 01 cidr"
+output "subnet_main_subnet_01a_cidr" {
+  value = aws_subnet.main_subnet_01a.cidr_block
+  description = "main_subnet_01a cidr"
 }
 
-output "lab_ecs_subnet_02_cidr" {
-  value = "${aws_subnet.lab_ecs_subnet_02.cidr_block}"
-  description = "lab ecs subnet 02 cidr"
-}
-
-
-
-output "lab_ecr_01_url" {
-  value = "${aws_ecr_repository.lab_ecr_01.repository_url}"
-  description  = "ecr image repository url"
+output "subnet_main_subnet_02c_cidr" {
+  value = aws_subnet.main_subnet_02c.cidr_block
+  description = "main_subnet_02c cidr"
 }

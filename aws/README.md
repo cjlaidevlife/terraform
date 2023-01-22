@@ -1,8 +1,3 @@
-# Building the Terraform Environment with Vagrant
+# learning the terraform with aws provider
 
-![](https://img.shields.io/badge/Windows-11-green?logo=windows) ![](https://img.shields.io/badge/Hyperv-10.0.22621.1-green?logo=windows) ![](https://img.shields.io/badge/Vagrant-2.2.19-green?logo=windows) 
-
-# You Will Get     
-1. vm: hyperv based virtual machine.    
-2. docker: already pull both "amazon/aws-cli:2.7.12" and "hashicorp/terraform:1.2.4" images.     
-3. tools: already install both "aws-cli" and "tfenv" tools.     
+![](https://img.shields.io/badge/macos-ventura_13.1-green?logo=Apple) ![](https://img.shields.io/badge/cpu-Apple_M1_Pro-green?logo=Arm) ![](https://img.shields.io/badge/terraform-v1.3.7-green?logo=terraform) ![](https://img.shields.io/badge/aws_provider-4.50.0-green?logo=amazon)
