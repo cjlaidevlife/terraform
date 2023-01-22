@@ -1,0 +1,60 @@
+formatter: "md doc" 
+version: ">= 0.13"
+header-from: main.tf
+recursive:
+  enabled: false
+  path: modules
+content: |-
+  {{ .Header }}
+  ## Prerequirements
+  |Name|Version|
+  |---|---|
+  |aws-cli|2.8.7|
+  |tfenv|2.2.3|
+  |terraform|1.3.7|
+  |terraform-docs|1.2.21|
+
+  you need install below tools
+  1. **terraform**: Can install specific version terraform by `tfenv` command tool.
+  2. **aws-cli**: Cofiguration aws credentials and verify result. 
+  3. **terraform-docs**: Generate documentation about terraform.
+  {{ .Providers }}
+  {{ .Modules }}
+  {{ .Inputs }}  
+  {{ .Outputs }}  
+  ## Resources
+  {{ range .Module.Resources }}
+  - {{ .GetMode }}.{{ .Spec }} ({{ .Position.Filename }}#{{ .Position.Line }})
+  {{- end }} 
+
+
+output:
+  file: README.md
+  mode: inject
+  template: |-
+    <!-- BEGIN_TF_DOCS -->
+    {{ .Content }}
+    <!-- END_TF_DOCS -->
+
+output-values:
+  enabled: true
+  from: "output_values.json"
+
+sort:
+  enabled: true
+  by: name
+
+settings:
+  anchor: true
+  color: true
+  default: true
+  description: false
+  escape: true
+  hide-empty: false 
+  html: true
+  indent: 2
+  lockfile: true
+  read-comments: true
+  required: true
+  sensitive: true
+  type: true

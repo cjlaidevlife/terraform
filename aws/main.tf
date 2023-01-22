@@ -1,3 +1,7 @@
+/**
+ * # terraform with aws provider
+ * Use the terraform with aws provider to interact. You must configure the provider with the proper credentials before you can use it.
+ */
 terraform {
   required_providers {
     aws = {
