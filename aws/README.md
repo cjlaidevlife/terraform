@@ -29,6 +29,7 @@ No inputs.
 | Name | Description | Value | Sensitive |
 |------|-------------|-------|:---------:|
 | <a name="output_ecr_main_ecr_01_url"></a> [ecr\_main\_ecr\_01\_url](#output\_ecr\_main\_ecr\_01\_url) | aws ecr | `"125116272033.dkr.ecr.ap-northeast-1.amazonaws.com/main_ecr_01"` | no |
+| <a name="output_main_ecs_cluster01"></a> [main\_ecs\_cluster01](#output\_main\_ecs\_cluster01) | aws ecs | `"arn:aws:ecs:ap-northeast-1:125116272033:cluster/main_ecs_cluster01"` | no |
 | <a name="output_subnet_main_subnet_01a_cidr"></a> [subnet\_main\_subnet\_01a\_cidr](#output\_subnet\_main\_subnet\_01a\_cidr) | main\_subnet\_01a cidr | `"10.10.20.0/28"` | no |
 | <a name="output_subnet_main_subnet_02c_cidr"></a> [subnet\_main\_subnet\_02c\_cidr](#output\_subnet\_main\_subnet\_02c\_cidr) | main\_subnet\_02c cidr | `"10.10.20.16/28"` | no |
 | <a name="output_vpc_main_cidr"></a> [vpc\_main\_cidr](#output\_vpc\_main\_cidr) | main vpc cidr | `"10.10.0.0/16"` | no |
@@ -36,6 +37,8 @@ No inputs.
 
 - resource.aws_ecr_lifecycle_policy.main_ecr_01_untaged_policy (ecr.tf#18)
 - resource.aws_ecr_repository.main_ecr_01 (ecr.tf#1)
+- resource.aws_ecs_cluster.main_ecs_cluster01 (ecs.tf#1)
+- resource.aws_ecs_task_definition.main_ecs_task_define01 (ecs.tf#18)
 - resource.aws_subnet.main_subnet_01a (vpc.tf#14)
 - resource.aws_subnet.main_subnet_02c (vpc.tf#28)
 - resource.aws_vpc.main (vpc.tf#1)

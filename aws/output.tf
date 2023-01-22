@@ -17,3 +17,8 @@ output "ecr_main_ecr_01_url" {
   value = aws_ecr_repository.main_ecr_01.repository_url
   description = "aws ecr"
 }
+
+output "main_ecs_cluster01" {
+  value = aws_ecs_cluster.main_ecs_cluster01.id
+  description = "aws ecs"
+}
