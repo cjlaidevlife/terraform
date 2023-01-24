@@ -39,7 +39,11 @@ No inputs.
 - resource.aws_ecr_repository.main_ecr_01 (ecr.tf#1)
 - resource.aws_ecs_cluster.main_ecs_cluster01 (ecs.tf#1)
 - resource.aws_ecs_task_definition.main_ecs_task_define01 (ecs.tf#18)
+- resource.aws_iam_policy.aws_ecr_iam_policy (iam.tf#1)
+- resource.aws_instance.main_ec2_web (ec2.tf#25)
+- resource.aws_network_interface.main_ec2_network_interface01 (ec2.tf#17)
 - resource.aws_subnet.main_subnet_01a (vpc.tf#14)
 - resource.aws_subnet.main_subnet_02c (vpc.tf#28)
 - resource.aws_vpc.main (vpc.tf#1)
+- data source.aws_ami.ubuntu (ec2.tf#1)
 <!-- END_TF_DOCS -->
