@@ -16,7 +16,7 @@ data "aws_ami" "ubuntu" {
 
 resource "aws_network_interface" "main_ec2_network_interface01" {
   subnet_id   = aws_subnet.main_subnet_01a.id
-
+  private_ips = ["10.10.20.14"]
   tags = {
     Name = "primary_network_interface"
   }
@@ -32,10 +32,10 @@ resource "aws_instance" "main_ec2_web" {
   }
 
   tags = {
-    Name = "main_ec2_web"
-    Type = "aws_instance"
-    Region = "ap-northeast-1"
-    Manager = "terraform 1.50.0"
+    Name     = "main_ec2_web"
+    Type     = "aws_instance"
+    Region   = "ap-northeast-1"
+    Manager  = "terraform 1.50.0"
     Provider = "1.3.7"
   }
 }
